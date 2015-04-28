@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(value = "/greeting", initParams = @WebInitParam(name = "defaultName", value = "Suzan"))
+@WebServlet(value = "/greetingA", initParams = @WebInitParam(name = "defaultName", value = "Suzan"))
 public class GreetingServlet extends HttpServlet {
 
 	private static final long serialVersionUID = 1L;
