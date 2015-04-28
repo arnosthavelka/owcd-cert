@@ -10,15 +10,13 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
-	<h3>Context params</h3>
-	Value context parameter from web.xml: ${initParam.defaultName}
-	<?prettify lang=jsp linenums=true?>
-	<pre class="prettyprint"><% out.println("${<strong>initParam</strong>.defaultName}"); %></pre>
+	<h3>Init params</h3>
+	context param (from web.xml): ${initParam.defaultName}<br/>
+	servlet param (from @WebInitParam): ${servletInitName}<br/>	
 
-	<h3>Attribute value</h3>
-	Value from model: ${name}
-	<?prettify lang=jsp linenums=true?>
-	<pre class="prettyprint"><% out.println("${name}"); %></pre>
+	<h3>Name values</h3>
+	Request param (from the client): ${paramName}<br/>
+	Final value (from model): ${name}
 
 </body>
 </html>
