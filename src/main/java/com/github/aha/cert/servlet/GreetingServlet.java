@@ -29,6 +29,10 @@ public class GreetingServlet extends HttpServlet {
 		request.setAttribute("servletInitName", servletInitName);
 		request.setAttribute("paramName", paramName);
 		request.setAttribute("name", name);
+
+		// log final value
+		log(String.format("Final name=%s", name));
+
 		// forward to JSP
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting.jsp");
 		dispatcher.forward(request, response);

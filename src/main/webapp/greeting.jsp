@@ -12,7 +12,7 @@
 <body>
 	<h3>Init params</h3>
 	context param (from web.xml): ${initParam.defaultName}<br/>
-	servlet param (from @WebInitParam): ${servletInitName}<br/>	
+	servlet param (from @WebInitParam): ${servletInitName}<br/>
 
 	<h3>Name values</h3>
 	Request param (from the client): ${paramName}<br/>
