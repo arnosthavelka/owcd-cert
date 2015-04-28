@@ -9,14 +9,39 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
+	<h3>&lt;jsp:scriptlet&gt; ¦ &lt;% xyz %&gt;</h3>
+	Result: 
 	<jsp:scriptlet>
-		out.println("Hello Scriptlet!");
-	</jsp:scriptlet>
+		out.println("AAA");
+	</jsp:scriptlet>  ¦
+	<% out.println("BBB"); %>
 	<?prettify lang=jsp linenums=true?>
 	<pre class="prettyprint">
 &lt;jsp:scriptlet&gt;
 	out.println("Hello Scriptlet!");
-&lt;/jsp:scriptlet&gt;
-	</pre>
+&lt;/jsp:scriptlet&gt;</pre>
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">&lt;% out.println("BBB"); %&gt;</pre>
+	
+	
+	
+	<h3>&lt;jsp:useBean&gt;</h3>
+	<jsp:useBean id="foo" class="com.github.aha.cert.dto.Foo">
+		<jsp:setProperty name="foo" property="name" value="foo" />
+	</jsp:useBean>
+	Result: ${foo.name}
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">
+&lt;jsp:useBean id="foo" class="com.github.aha.cert.dto.Foo"&gt;
+	&lt;jsp:setProperty name="foo" property="name" value="foo" /&gt;
+&lt;/jsp:useBean&gt;</pre>
+	
+	<h3>&lt;jsp:setProperty&gt;</h3>
+	<jsp:setProperty name="foo" property="name" value="aha" />
+	Result: ${foo.name}
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">
+&lt;jsp:setProperty name="foo" property="name" value="aha" &gt;</pre>
+
 </body>
 </html>
