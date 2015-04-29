@@ -20,10 +20,12 @@ public class GreetingServlet extends HttpServlet {
 		String contextInitName = request.getServletContext().getInitParameter("defaultName");
 		String servletInitName = getInitParameter("defaultName");
 		String paramName = request.getParameter("name");
+		String attributeName = (String) request.getAttribute("name");
 
 		String name = contextInitName;
 		name = modifyValue(name, servletInitName);
 		name = modifyValue(name, paramName);
+		name = modifyValue(name, attributeName);
 
 		// set values to request
 		request.setAttribute("servletInitName", servletInitName);

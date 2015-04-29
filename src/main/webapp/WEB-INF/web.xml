@@ -33,4 +33,17 @@
 		<url-pattern>/jsp</url-pattern>
 	</servlet-mapping>
 	
+	
+	<filter>
+		<filter-name>GreetingFilterX</filter-name>
+		<filter-class>com.github.aha.cert.filter.GreetingFilter</filter-class>
+		<init-param>
+			<param-name>name</param-name>
+			<param-value>Katherine</param-value>
+		</init-param>
+	</filter>
+	<filter-mapping>
+		<filter-name>GreetingFilterX</filter-name>
+		<url-pattern>/greetingX</url-pattern>
+	</filter-mapping>	
 </web-app>
