@@ -1,14 +1,13 @@
-<web-app xmlns="http://java.sun.com/xml/ns/javaee" 
-    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
+<web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee 
                         http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd"
-                        version="3.0">
-    <display-name>Training application for OWCD certification</display-name>
-    
-    <context-param>
-    	<param-name>defaultName</param-name>
-    	<param-value>Megan</param-value>
-    </context-param>
+	version="3.0">
+	<display-name>Training application for OWCD certification</display-name>
+
+	<context-param>
+		<param-name>defaultName</param-name>
+		<param-value>Megan</param-value>
+	</context-param>
 
 	<servlet>
 		<servlet-name>greetingServlet</servlet-name>
@@ -22,18 +21,18 @@
 		<servlet-name>greetingServlet</servlet-name>
 		<url-pattern>/greetingX</url-pattern>
 	</servlet-mapping>
-	
+
 	<servlet>
 		<servlet-name>jspServlet</servlet-name>
 		<jsp-file>/jsp.jsp</jsp-file>
 		<load-on-startup>3</load-on-startup>
-	</servlet>	
+	</servlet>
 	<servlet-mapping>
 		<servlet-name>jspServlet</servlet-name>
 		<url-pattern>/jsp</url-pattern>
 	</servlet-mapping>
-	
-	
+
+
 	<filter>
 		<filter-name>GreetingFilterX</filter-name>
 		<filter-class>com.github.aha.cert.filter.GreetingFilter</filter-class>
@@ -45,5 +44,26 @@
 	<filter-mapping>
 		<filter-name>GreetingFilterX</filter-name>
 		<url-pattern>/greetingX</url-pattern>
-	</filter-mapping>	
+	</filter-mapping>
+
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>restricted area</web-resource-name>
+			<url-pattern>/restricted/*</url-pattern>
+			<http-method>GET</http-method>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>Manager</role-name>
+		</auth-constraint>
+		<user-data-constraint>
+			<transport-guarantee>NONE</transport-guarantee>
+		</user-data-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>OWCD restricted area</realm-name>
+	</login-config>
+	<security-role>
+		<role-name>Manager</role-name>
+	</security-role>
 </web-app>
