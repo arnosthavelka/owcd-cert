@@ -11,9 +11,9 @@
 </head>
 <body>
 	<h3>Simple stacktrace (via scriptlets):</h3> 
-	<?prettify lang=jsp linenums=true?>
+	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;% exception.printStackTrace(response.getWriter()); %&gt;</pre>
-	<?prettify lang=jsp linenums=true?>
+	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;% exception.printStackTrace(new java.io.PrintWriter(out)); %&gt;</pre>
 		
 	<% exception.printStackTrace(new java.io.PrintWriter(out)); %>
