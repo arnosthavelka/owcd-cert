@@ -55,6 +55,12 @@
 		<url-pattern>/greetingX</url-pattern>
 	</filter-mapping>
 
+
+	<listener>
+		<listener-class>com.github.aha.cert.listener.AppContextListener</listener-class>
+	</listener>
+
+  
 	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>restricted area</web-resource-name>
