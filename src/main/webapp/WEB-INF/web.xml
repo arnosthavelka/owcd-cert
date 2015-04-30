@@ -25,6 +25,10 @@
 	<servlet>
 		<servlet-name>helloServlet</servlet-name>
 		<servlet-class>com.github.aha.cert.servlet.RestrictedHelloServlet</servlet-class>
+		<security-role-ref>
+			<role-name>cheater</role-name>
+			<role-link>Manager</role-link>
+		</security-role-ref>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>helloServlet</servlet-name>

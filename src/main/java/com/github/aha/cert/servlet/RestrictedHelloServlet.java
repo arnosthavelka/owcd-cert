@@ -27,5 +27,9 @@ public class RestrictedHelloServlet extends HttpServlet {
 		ServletOutputStream out = response.getOutputStream();
 		out.println("Secret servlet name:");
 		out.println(request.getServletContext().getServletContextName());
+
+		if (request.isUserInRole("cheater")) {
+			out.println("Hey: I am cheating ...");
+		}
 	}
 }
