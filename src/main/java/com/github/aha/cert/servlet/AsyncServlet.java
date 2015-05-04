@@ -16,7 +16,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 /**
- * Examples https://github.com/henriklundahl/async-servlet-examples,
+ * See http://www.jayway.com/2014/05/16/async-servlets/ (https://github.com/henriklundahl/async-servlet-examples),
  * http://www.javacodegeeks.com/2013/08/async-servlet-feature-of-servlet-3.html
  *
  */
@@ -70,13 +70,13 @@ public class AsyncServlet extends HttpServlet {
 	}
 
 	private long retrieveValue(HttpServletRequest req, String paramName) {
-		String replyAfterMs = req.getParameter(paramName);
-		if (replyAfterMs == null) {
-			replyAfterMs = getInitParameter(paramName);
+		String valueParam = req.getParameter(paramName);
+		if (valueParam == null) {
+			valueParam = getInitParameter(paramName);
 		}
-		long replyAfterMillis = Long.parseLong(replyAfterMs);
-		if (replyAfterMillis <= 0)
-			replyAfterMillis = 1000;
-		return replyAfterMillis;
+		long value = Long.parseLong(valueParam);
+		if (value <= 0)
+			value = 1000;
+		return value;
 	}	
 }
