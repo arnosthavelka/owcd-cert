@@ -10,20 +10,54 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
-	<h3>&lt;jsp:scriptlet&gt; ¦ &lt;% xyz %&gt;</h3>
+	<h3>&lt;jsp:scriptlet&gt; | &lt;% xyz %&gt;</h3>
 	Result: 
 	<jsp:scriptlet>
 		out.println("AAA");
-	</jsp:scriptlet>  ¦
+	</jsp:scriptlet>  |
 	<% out.println("BBB"); %>
 	<?prettify lang=jsp linenums=true?>
 	<pre class="prettyprint">
 &lt;jsp:scriptlet&gt;
 	out.println("Hello Scriptlet!");
 &lt;/jsp:scriptlet&gt;</pre>
-	<?prettify lang=jsp linenums=true?>
+	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;% out.println("BBB"); %&gt;</pre>
 	
+	<h3>&lt;jsp:declaration&gt; | &lt;%! xyz %&gt;</h3>
+	Result:
+	<jsp:declaration>
+	String a = "AAA";
+	</jsp:declaration>
+	<%= a %>  |
+	<% String b = "BBB"; %>
+	<%= b %>
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">
+&lt;jsp:declaration&gt;
+	String a = "AAA";
+&lt;/jsp:declaration&gt;</pre>
+	<?prettify lang=jsp linenums=false?>
+	<pre class="prettyprint">&lt;%! String a = "AAA"; %&gt;</pre>
+
+	<h3>&lt;jsp:expression&gt; | &lt;%= xyz %&gt;</h3>
+	Result:
+	<jsp:expression>a</jsp:expression> |
+	<%= b %> |
+	Today's date: <%= (new java.util.Date()).toString() %>
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">
+&lt;jsp:expression&gt;a&lt;/jsp:declaration&gt;</pre>
+	<?prettify lang=jsp linenums=false?>
+	<pre class="prettyprint">&lt;%= b %&gt;</pre>
+	<?prettify lang=jsp linenums=false?>
+	<pre class="prettyprint">&lt;%= (new java.util.Date()).toString() %&gt;</pre>
+
+	<h3>&lt;%-- comment --%&gt;</h3>
+	Result:	<%-- my comment --%>
+	<?prettify lang=jsp linenums=false?>
+	<pre class="prettyprint">&lt;%-- my comment --%&gt;</pre>
+
 	<h3>&lt;jsp:useBean&gt;</h3>
 	<jsp:useBean id="foo" class="com.github.aha.cert.dto.Foo">
 		<jsp:setProperty name="foo" property="name" value="foo" />
@@ -38,7 +72,7 @@
 	<h3>&lt;jsp:setProperty&gt;</h3>
 	<jsp:setProperty name="foo" property="name" value="aha" />
 	Result: ${foo.name}
-	<?prettify lang=jsp linenums=true?>
+	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">
 &lt;jsp:setProperty name="foo" property="name" value="aha" &gt;</pre>
 </body>
