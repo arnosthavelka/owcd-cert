@@ -86,4 +86,13 @@
 		<role-name>Manager</role-name>
 	</security-role>
 
+	<error-page>
+		<error-code>404</error-code>
+		<location>/error_page.html</location>
+	</error-page>
+	<error-page>
+		<exception-type>com.github.aha.cert.exception.MyException</exception-type>
+		<location>/error_handle.jsp</location>
+	</error-page>
+
 </web-app>
