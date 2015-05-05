@@ -10,7 +10,7 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
-	<h3>Simple stacktrace (via scriptlets):</h3> 
+	<h3>Simple stacktrace (via JSP scriptlets):</h3> 
 	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;% exception.printStackTrace(response.getWriter()); %&gt;</pre>
 	<?prettify lang=jsp linenums=false?>
@@ -18,10 +18,9 @@
 		
 	<% exception.printStackTrace(new java.io.PrintWriter(out)); %>
 
-	<h3>Formatted stacktrace (via JSTL):</h3>
-	<strong style="color:red">TODO - it's empty</strong><br/>
-	Exception: ${exception.message} | <% exception.getMessage(); %> | <c:out value="${exception.message}"/>.
-	<c:forEach items="${exception.stackTrace}" var="stackTrace">
+	<h3>Formatted stacktrace (via EL):</h3>
+	<h4>Exception: ${pageContext.exception.message}</h4> <!-- or ${requestScope["javax.servlet.error.exception"].message} -->
+	<c:forEach items="${pageContext.exception.stackTrace}" var="stackTrace">
     	${stackTrace}<br/> <%-- or <c:out value="${element}" /> --%>
 	</c:forEach>
 
