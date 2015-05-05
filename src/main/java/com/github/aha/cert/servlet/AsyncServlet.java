@@ -15,6 +15,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.github.aha.cert.listener.AppAsyncListener;
+
 /**
  * See http://www.jayway.com/2014/05/16/async-servlets/ (https://github.com/henriklundahl/async-servlet-examples),
  * http://www.javacodegeeks.com/2013/08/async-servlet-feature-of-servlet-3.html
@@ -38,11 +40,15 @@ public class AsyncServlet extends HttpServlet {
 		final UUID token = UUID.randomUUID();
 		log("Request started [token=" + token + "]");
 
-		// Initialize async processing.
-		final AsyncContext context = request.startAsync();
 		// parse initial parameters/values
 		long replyAfterMillis = retrieveValue(request, "time");
-		context.setTimeout(retrieveValue(request, "timeout"));
+		long timeoutMillis = retrieveValue(request, "timeout");
+
+		// Initialize async processing.
+		final AsyncContext context = request.startAsync();
+		context.addListener(new AppAsyncListener());
+		context.setTimeout(timeoutMillis);
+
 		// start async processing
 		final long before = System.currentTimeMillis();
 		timer.schedule(new TimerTask() {
@@ -55,13 +61,15 @@ public class AsyncServlet extends HttpServlet {
 				response.setContentType("text/plain");
 				response.setCharacterEncoding("UTF-8");
 				byte[] entity = ("Replying after " + time + " milliseconds.\n").getBytes(Charset.forName("UTF-8"));
-				response.setContentLength(entity.length);
-				try {
-					response.getOutputStream().write(entity);
-					log("Async processing finished [token=" + token + "]");
-				} catch (IOException e) {
-					e.printStackTrace();
-					log("Async processing error [token=" + token + "]", e);
+				if (!response.isCommitted()) {
+					response.setContentLength(entity.length);
+					try {
+						response.getOutputStream().write(entity);
+						log("Async processing finished [token=" + token + "]");
+					} catch (IOException e) {
+						e.printStackTrace();
+						log("Async processing error [token=" + token + "]", e);
+					}
 				}
 				context.complete();
 			}
