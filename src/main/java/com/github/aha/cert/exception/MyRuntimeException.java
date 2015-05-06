@@ -1,10 +1,10 @@
 package com.github.aha.cert.exception;
 
-public class MyException extends RuntimeException {
+public class MyRuntimeException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 
-	public MyException(String message) {
+	public MyRuntimeException(String message) {
 		super(message);
 	}
 

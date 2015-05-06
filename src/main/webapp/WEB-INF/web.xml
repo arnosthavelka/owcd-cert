@@ -91,7 +91,11 @@
 		<location>/error_page.html</location>
 	</error-page>
 	<error-page>
-		<exception-type>com.github.aha.cert.exception.MyException</exception-type>
+		<exception-type>com.github.aha.cert.exception.MyRuntimeException</exception-type>
+		<location>/error_handle.jsp</location>
+	</error-page>
+	<error-page>
+		<exception-type>com.github.aha.cert.exception.MyCheckedException</exception-type>
 		<location>/error_handle.jsp</location>
 	</error-page>
 
