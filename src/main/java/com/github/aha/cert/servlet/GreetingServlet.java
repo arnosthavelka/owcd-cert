@@ -38,6 +38,7 @@ public class GreetingServlet extends HttpServlet {
 		// forward to JSP
 		RequestDispatcher dispatcher = getServletContext().getRequestDispatcher("/greeting.jsp");
 		dispatcher.forward(request, response);
+
 	}
 
 	private String modifyValue(String name, String paramName) {

@@ -7,4 +7,9 @@
 		<tag-class>com.github.aha.cert.tag.HelloTag</tag-class>
 		<body-content>empty</body-content>
 	</tag>
+	<tag>
+		<name>error</name>
+		<tag-class>com.github.aha.cert.tag.ErrorTag</tag-class>
+		<body-content>empty</body-content>
+	</tag>
 </taglib>

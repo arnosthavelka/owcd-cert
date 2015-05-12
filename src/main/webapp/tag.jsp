@@ -10,8 +10,6 @@
 	<title>Tag usage</title>
 	<link href="gcp/prettify.css" type="text/css" rel="stylesheet" />
 	<script src="gcp/run_prettify.js" defer="defer"></script>
-	<link href="gcp/prettify.css" type="text/css" rel="stylesheet" />
-	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
 	Tag declation: 
