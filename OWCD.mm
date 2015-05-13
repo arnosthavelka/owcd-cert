@@ -27,7 +27,7 @@
 </html>
 </richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="20"/>
-<node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1430922736242" POSITION="right" TEXT="Servlet">
+<node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1431526939414" POSITION="right" TEXT="Servlet">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1431011121659" ID="ID_1909152799" MODIFIED="1431506125557" TEXT="General">
 <richcontent TYPE="NOTE"><html>
@@ -145,7 +145,7 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431504521046" TEXT="Cookies">
+<node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431522116656" TEXT="Cookies">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -171,8 +171,19 @@ for(Cookie c :&#160;&#160;cs){
         //do something based on the value.
     }
 }</pre>
+    <h4>
+      Remove all cookies
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">Cookie[] cs = request.getCookies();
+if(cs != null){
+ &#160;&#160;&#160;for(Cookie c :&#160;&#160;cs){
+ &#160;&#160;&#160;c.setMaxAge(0);
+ &#160;&#160;&#160;response.addCookie(c);
+ &#160;&#160;}
+}</pre>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431506507411" TEXT="Asynchronous processing ">
 <richcontent TYPE="NOTE"><html>
@@ -209,7 +220,7 @@ for(Cookie c :&#160;&#160;cs){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431502625662" TEXT="RequestDispatcher">
+<node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431522584750" TEXT="RequestDispatcher">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -231,9 +242,13 @@ for(Cookie c :&#160;&#160;cs){
       <li>
         <code>ServletRequest.getRequestDispatcher </code>-&#160;&#160;the pathname is relative. If the path begins with a &quot;/&quot; it is interpreted as relative to the current context root. This method returns <code>null</code>&#160;&#160;if the servlet container cannot return a <code>RequestDispatcher</code>.
       </li>
+      <li>
+        <code>ServletRequest.</code><font face="monospace">getNamedDispatcher</font><code>&#160;</code>- The method takes a String argument indicating the name of a servlet known to the <font face="monospace">ServletContext</font>. If a servlet is found, it is wrapped with a <font face="monospace">RequestDispatcher</font>&#160;object and the object is returned. If no servlet is associated with the given name, the method must return <font face="monospace">null</font>.
+      </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431007350675" TEXT="Registration Interfaces ">
 <richcontent TYPE="NOTE"><html>
@@ -346,8 +361,40 @@ for(Cookie c :&#160;&#160;cs){
   </body>
 </html></richcontent>
 </node>
+<node CREATED="1431526945196" ID="ID_1730819538" MODIFIED="1431527026067" TEXT="Forward">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    The container makes the following attributes available in the request when a request is forwarded to another servlet. These attributes reflect the original values of the request:
+
+    <ul>
+      <li>
+        <font face="monospace">javax.servlet.forward.request_uri</font>
+      </li>
+      <li>
+        <font face="monospace">javax.servlet.forward.context_path</font>
+      </li>
+      <li>
+        <font face="monospace">javax.servlet.forward.servlet_path</font>
+      </li>
+      <li>
+        <font face="monospace">javax.servlet.forward.path_info</font>
+      </li>
+      <li>
+        <font face="monospace">javax.servlet.forward.query_string</font><br />
+      </li>
+    </ul>
+    <p>
+      Your servlet can use<font face="monospace">&#160;request.getAttribute(&quot;javax.servlet.forward.request_uri&quot;) </font>to get the URI that was requested by the user.<br /><br />However, if the forwarded servlet was obtained by using the <font face="monospace">getNamedDispatcher</font>&#160;method, these attributes are not be set. How can the original requestion information be obtained in this situation is not clear from the specification.
+    </p>
+  </body>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431506630248" POSITION="right" TEXT="Filter">
+</node>
+<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431526937383" POSITION="right" TEXT="Filter">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430996392395" ID="ID_200801889" MODIFIED="1430997485371" TEXT="Anotation">
 <richcontent TYPE="NOTE"><html>
@@ -403,7 +450,7 @@ public class GreetingFilter implements Filter {
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1430910130167" ID="ID_761648779" MODIFIED="1431011257292" POSITION="right" TEXT="web.xml">
+<node CREATED="1430910130167" FOLDED="true" ID="ID_761648779" MODIFIED="1431526938367" POSITION="right" TEXT="web.xml">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430997168542" ID="ID_1947129208" MODIFIED="1430997929022" TEXT="Basics">
 <richcontent TYPE="NOTE"><html>
@@ -516,17 +563,23 @@ public class GreetingFilter implements Filter {
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430997507665" FOLDED="true" ID="ID_1907122268" MODIFIED="1431440766236" TEXT="Security">
+<node CREATED="1430997507665" FOLDED="true" ID="ID_1907122268" MODIFIED="1431522723176" TEXT="Security">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
-    <p>
-      The concept of the declarative security model does not apply in case of include and forward actions. Thus, an unprotected resource can have a call to a protected resource without having the user to log in.
-    </p>
+    <ul>
+      <li>
+        The concept of the declarative security model does not apply in case of include and forward actions. Thus, an unprotected resource can have a call to a protected resource without having the user to log in.
+      </li>
+      <li>
+        The application data is secured by factors &quot;data integrity&quot; and &quot;confidentiality&quot;.
+      </li>
+    </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 <node CREATED="1430999414010" ID="ID_1844018794" MODIFIED="1431000047220" TEXT="Annotation">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -906,7 +959,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431010496436" ID="ID_857843825" MODIFIED="1431010960537" TEXT="TagLib">
+<node CREATED="1431010496436" ID="ID_857843825" MODIFIED="1431526777177" TEXT="TagLib">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -941,6 +994,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       <li>
         Keep loose (or unbundled) classes in WEB-INF/classes. You can keep the *.tld in WEB-INF (or any sub directory of WEB-INF) where the webapp can access it. As per JSP Section 7.3.4, the container automatically associates the uri specified in the tld file with that tld file. So you don't have to explicitly specify that in the &lt;taglib-location&gt;.
       </li>
+      <li>
+        For a tag to take any number of arguments, it must implement javax.servlet.jsp.tagext.DynamicAttributes interface.
+      </li>
     </ul>
     <h4>
       Examples:
@@ -948,25 +1004,67 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;%@taglib uri=&quot;/stats&quot; prefix=&quot;stats&quot; %&gt;
 &lt;%@taglib tagdir=&quot;/WEB-INF/tags/stats&quot; prefix=&quot;stats&quot; %&gt;</pre>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431507070054" TEXT="JAR library (web-fragment.xml)">
+<node CREATED="1431524738343" FOLDED="true" ID="ID_525420565" MODIFIED="1431526743434" TEXT="web-fragments">
+<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431526516495" TEXT="JAR library">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
-    If a framework is packaged as a jar file and has metadata information in the form of deployment descriptor (which must be named
-
     <p>
-      <font face="monospace">web-fragment.xml</font>) then the <font face="monospace">web-fragment.xml</font>&#160;descriptor must be in the <font face="monospace">META-INF</font>/ directory of the jar file.<br /><br />If a framework wants its <font face="monospace">META-INF/web-fragment.xml</font>&#160;honored in such a way that it augments a web application's <font face="monospace">web.xml</font>, the framework must be bundled within the web application's <font face="monospace">WEB-INF/lib</font>&#160;directory.
+      If a framework is packaged as a jar file, than:
     </p>
+    <ul>
+      <li>
+        The&#160;metadata information in the form of deployment descriptor (which must be named <font face="monospace">web-fragment.xml</font>) then the <font face="monospace">web-fragment.xml</font>&#160;descriptor must be in the <font face="monospace">META-INF</font>/ directory of the jar file.<br />
+      </li>
+      <li>
+        Files stored under <font face="monospace">META-INF</font>&#160;folder of a jar file can be served directly to the user only if they are in <font face="monospace">META-INF/resources</font>.
+      </li>
+      <li>
+        If a framework wants its <font face="monospace">META-INF/web-fragment.xml</font>&#160;honored in such a way that it augments a web application's web.xml, the framework must be bundled within the web application's&#160;<font face="monospace">WEB-INF/lib </font>directory.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431524780579" ID="ID_476806081" MODIFIED="1431524988850" TEXT="Absolute ordering">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The rules for absolute ordering are quite simple and straight forward:
+    </p>
+    <ul>
+      <li>
+        Specified by using an &lt;absolute-ordering&gt; element in the web.xml.
+      </li>
+      <li>
+        Any &lt;name&gt; element direct children of the &lt;absolute-ordering&gt; must be interpreted as indicating the absolute ordering in which those named webfragments, which may or may not be present, must be processed.&#160;
+      </li>
+      <li>
+        The &lt;absolute-ordering&gt; element may contain zero or one &lt;others /&gt; element.&#160;&#160;If the &lt;absolute-ordering&gt; element does not contain an &lt;others/&gt; element, any web-fragment not specifically mentioned within &lt;name /&gt; elements must be ignored.&#160;
+      </li>
+      <li>
+        Duplicate name exception: if, when traversing the children of &lt;absolute-ordering&gt;, multiple children with the same &lt;name&gt; element are encountered, only the first such occurrence must be considered.&#160;
+      </li>
+      <li>
+        If an &lt;ordering&gt; element appears in the web.xml, an informative message must be logged and the element must be ignored.
+      </li>
+    </ul>
   </body>
 </html>
 </richcontent>
 </node>
 </node>
-<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431506628361" POSITION="right" TEXT="JSP">
+</node>
+<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431526027084" POSITION="right" TEXT="JSP">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430915044834" ID="ID_1807315546" MODIFIED="1430915311817" TEXT="Basic syntax">
 <richcontent TYPE="NOTE"><html>
@@ -1352,32 +1450,41 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990907863" ID="ID_369303020" MODIFIED="1430990936776" TEXT="setProperty">
+<node CREATED="1430990907863" ID="ID_369303020" MODIFIED="1431524215949" TEXT="setProperty">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
     <p>
+      Set a property color with request's parameter value (when parameter name is not specified)
+    </p>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;user&quot; property=&quot;country&quot;/&gt;</pre>
+    <p>
       Set a property of the bean from request parameter 'aha'
     </p>
-    <pre class="prettyprint notranslate prettyprinted" style="font-family: Menlo, Monaco, Consolas, Courier New, monospace; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; width: 604px; line-height: 16px; font-size: 12px; color: rgb(49, 49, 49); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;mybean&quot; property=&quot;name&quot; param=&quot;aha&quot;/&gt; </pre>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;mybean&quot; property=&quot;name&quot; param=&quot;aha&quot;/&gt; </pre>
     <small>Note: tag must be empty </small><br />
 
     <p>
       or
     </p>
-    <pre class="prettyprint notranslate prettyprinted" style="font-family: Menlo, Monaco, Consolas, Courier New, monospace; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; width: 604px; line-height: 16px; font-size: 12px; color: rgb(49, 49, 49); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(238, 238, 238)">&lt;jsp:useBean id=&quot;account&quot; class=&quot;com.enthuware.jwebplus.Account&quot;&gt;
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:useBean id=&quot;account&quot; class=&quot;com.enthuware.jwebplus.Account&quot;&gt;
     &lt;jsp:setProperty name=&quot;account&quot; property=&quot;name&quot; param=&quot;name&quot;/&gt;
 &lt;/jsp:useBean&gt;</pre>
-    <small>Note: tag body of tag &lt;jsp:useBean/&gt; is executed only when bean is being created --&gt; therefore not when bean already exists </small><br />
+    <small>Note: tag body of tag &lt;jsp:useBean/&gt; is executed only when bean is being created --&gt; therefore not when bean already exists </small>
 
     <p>
-      or
+      or calculate value (by EL)
     </p>
-    <pre class="prettyprint notranslate prettyprinted" style="font-family: Menlo, Monaco, Consolas, Courier New, monospace; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; width: 604px; line-height: 16px; font-size: 12px; color: rgb(49, 49, 49); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;acct2&quot; property=&quot;address&quot; value=&quot;${acct1.address}&quot; /&gt;</pre>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;acct2&quot; property=&quot;address&quot; value=&quot;${acct1.address}&quot; /&gt;</pre>
+    <p>
+      or calculate value (by scriptlet)
+    </p>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;user&quot; property=&quot;country&quot; value=&lt;%=request.getParameter(&quot;country&quot;)%&gt; /&gt;</pre>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node CREATED="1430990618126" ID="ID_305644191" MODIFIED="1431008296610" TEXT="include">
 <richcontent TYPE="NOTE"><html>
@@ -1582,7 +1689,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 <node CREATED="1430910223227" ID="ID_701736353" MODIFIED="1430910409934" TEXT="The processing state is not inherited across invocations and this makes it a lot more complicated to manage sessions."/>
 <node CREATED="1430910233147" ID="ID_1665340830" MODIFIED="1430910234319" TEXT="Simple requests that do not involve complex business logic are significantly easier to process using CGI (just script) instead of servlets."/>
 </node>
-<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431506635497" POSITION="left" TEXT="JSTL">
+<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431525665397" POSITION="left" TEXT="JSTL">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430913733459" ID="ID_1469782263" MODIFIED="1430913751797" TEXT="Accessing values from map">
 <richcontent TYPE="NOTE"><html>
@@ -2369,7 +2476,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431507084325" POSITION="left" TEXT="Session">
+<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431522872131" POSITION="left" TEXT="Session">
+<font BOLD="true" NAME="SansSerif" SIZE="14"/>
+<node CREATED="1431522860821" ID="ID_1169523730" MODIFIED="1431522875069" TEXT="Timeout">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2411,7 +2520,52 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html>
 </richcontent>
-<font BOLD="true" NAME="SansSerif" SIZE="14"/>
+</node>
+<node CREATED="1431522842800" ID="ID_1441732741" MODIFIED="1431523359244" TEXT="Session management">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h4>
+      Session tracking
+    </h4>
+    <p>
+      The sessions are tracked as:
+    </p>
+    <ul>
+      <li>
+        COOKIE - using cookies
+      </li>
+      <li>
+        URL - using URL Rewriting
+      </li>
+      <li>
+        SSL - using SSL/TLS
+      </li>
+    </ul>
+    <p>
+      The configuration in DD and related methods in ServletContext.
+    </p>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;session-config&gt;
+ &#160;&#160;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;
+&lt;/session-config&gt;
+    </pre>
+    <h4>
+      HttpOnly
+    </h4>
+    <p>
+      HttpOnly flag on session cookie - to mittigate cross site scripting.
+    </p>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;session-config&gt;
+&#160;&#160;&lt;cookie-config&gt; 
+&#160;&#160;&#160;&#160;&lt;http-only&gt;true&lt;/http-only&gt; 
+&#160;&#160;&lt;/cookie-config&gt; 
+&lt;/session-config&gt;</pre>
+  </body>
+</html>
+</richcontent>
+</node>
 </node>
 </node>
 </map>
