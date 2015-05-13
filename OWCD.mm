@@ -4,6 +4,218 @@
 <font BOLD="true" NAME="SansSerif" SIZE="20"/>
 <node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1430922736242" POSITION="right" TEXT="Servlet">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
+<node CREATED="1431011121659" ID="ID_1909152799" MODIFIED="1431506125557" TEXT="General">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h4>
+      Loading resource from web-app
+    </h4>
+    <p>
+      The path must begin with a &quot;/&quot; and is interpreted as relative to the current context root. For example, if the Web Application is stored in c:\tomcat\webapps\MyWebApp, the MyWebApp directory is the context root.
+    </p>
+    <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">InputStream is = context.getResourceAsStream(&quot;/WEB-INF/data.zip&quot;);
+    </pre>
+    <h4>
+      Registering servlet or filter
+    </h4>
+    <p>
+      We can add a servlet or a filter dynamically only before the initialization of the servlet context is complete. Here, &quot;initialization of a servlet context&quot; means initialization of the web application. Initialization is not considered complete until contextInitialized() of all ServletContextListeners is complete. So you can register a servlet in contextInitialized() of a ServletContextListener.
+    </p>
+    <h4>
+      Thread safe variables/properties
+    </h4>
+    <p>
+      Only local objects and request attributes (for non-asynch servlets) are thread safe.
+    </p>
+    <h4>
+      ServletResponse.isCommitted()
+    </h4>
+    <p>
+      IllegalStateException is thrown upon calling the sendError() method if the headers have already been sent to the client i.e. if the response has been committed already. The ServletResponse.isCommitted() tells you whether the response has been committed or not.
+    </p>
+    <h4>
+      Initialization failure (due to dependencies)
+    </h4>
+    <p>
+      As per Section 2.3.2.1 of Servlet 3.0 Specification, during initialization, the servlet instance can throw an <b>UnavailableException</b>&#160; or a <b>ServletException</b>. In this case, the servlet must not be placed into active service and must be released by the servlet container. The destroy method is not called as it is considered unsuccessful initialization.&#160;&#160;A new instance may be instantiated and initialized by the container after a failed initialization.&#160;&#160;The exception to this rule is when an UnavailableException indicates a minimum time of unavailability, and the container must wait for the period to pass before creating and initializing a new servlet instance.&#160;&#160;It is important to look at javax.servlet.UnavailableException (It extends javax.servlet.ServletException ) as well in this regard:&#160;
+    </p>
+    <ul>
+      <li>
+        UnavailableException(java.lang.String msg) - Constructs a new exception with a descriptive message indicating that the servlet is permanently unavailable.&#160;&#160;
+      </li>
+      <li>
+        UnavailableException(java.lang.String msg, int seconds) - Constructs a new exception with a descriptive message indicating that the servlet is temporarily unavailable and giving an estimate of how long it will be unavailable.&#160;&#160;In some cases, the servlet cannot make an estimate. For example, the servlet might know that a server it needs is not running, but not be able to report how long it will take to be restored to functionality. This can be indicated with a negative or zero value for the seconds argument.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431503302404" ID="ID_778527702" MODIFIED="1431503543831" TEXT="Request URL">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h4>
+      Definition
+    </h4>
+    <p>
+      Request URL = protocol://host:port + requestURI (contextpath + servletpath + pathinfo)
+    </p>
+    <h4>
+      Example
+    </h4>
+    <p>
+      Request URL = http://localhost:8080 + requestURI (/test + /aaa/abc.a + foo=Aha&amp;hoo=true)
+    </p>
+    <p>
+      Complete=http://localhost:8080/test/aaa/abc.a?foo=Aha&amp;hoo=true
+    </p>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431501561841" ID="ID_349919807" MODIFIED="1431505703348" TEXT="Attributes &amp; Parameters">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h4>
+      Parameters
+    </h4>
+    <p>
+      Parameter can not be set in a request. Parameters can only be sent from the browser. Retrieving request parameters (from ServletRequest) is done by these methods:
+    </p>
+    <ul>
+      <li>
+        <i>getParameterNames</i>() - returns an <code>Enumeration</code>&#160;of <code>String</code>&#160; objects containing the names of the parameters contained in this request. If the request has no parameters, the method returns an empty <code>Enumeration</code>.
+      </li>
+      <li>
+        <i>getParameter</i>(&quot;xyz&quot;) - returns the value of a request parameter as a <code>String</code>&#160;or <code>null</code>&#160;if the parameter does not exist.
+      </li>
+      <li>
+        <i>getParameterValues</i>(&quot;xyz&quot;) - returns an array of <code>String</code>&#160; objects containing all of the values the given request parameter has, or <code>null</code>&#160;if the parameter does not exist.
+      </li>
+    </ul>
+    <h4>
+      Attributes
+    </h4>
+    <p>
+      Attribute is used to share data between objects and can be set to:
+    </p>
+    <ul>
+      <li>
+        <b>ServletRequest</b>&#160;- The objects stored here will be discarded when this request ends. ie. the object you store in one request will not be available in the next. It is useful for storing temp. data if you are forwarding the request to another servlet or jsp.
+      </li>
+      <li>
+        <b>HttpSession </b>- The objects stored here will be discarded only when this session expires and up till then you can access it from any place/request where this session is available. You should not store a lot of data in the session as this data does not go away quickly and will hog the memory. Only critical information like login id is stored in the scope.
+      </li>
+      <li>
+        <b>ServletContext </b>- The objects stored here will be discarded only when this web application stops and up till then you can access it from any place/request irrespective of the session. Normally, initialization parameters are kept in this scope.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431504521046" TEXT="Cookies">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h4>
+      Set cookie valid for 1 hour
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">Cookie c = new Cookie(&quot;mycookie&quot;, &quot;some value&quot;);
+c.setMaxAge(3600);
+response.addCookie(c);</pre>
+    <h4>
+      Set cookie valid for some URL/path (listening to a servlet path of /showbook)
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">c.setPath(request.getContextPath()+&quot;/showbook&quot;);</pre>
+    <h4>
+      Check for some cookie
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">Cookie[] cs = request.getCookies();
+for(Cookie c :&#160;&#160;cs){
+    if(c.getName().equals(&quot;lastUserAction&quot;)){
+        String value = c.getValue();
+        //do something based on the value.
+    }
+}</pre>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431506507411" TEXT="Asynchronous processing ">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      A servlet that is marked with <b>asyncSupported=true</b>&#160;can choose not to defer the processing and finish the processing in the same thread effectively working as a synchronous processor. This is correct.
+    </p>
+    <h4>
+      Annotation
+    </h4>
+    <pre rgb="#DEFAULT" background-color="#DEFAULT" webservlet="#DEFAULT" name="" asynctestservlet="#DEFAULT" urlpatterns="{">AsyncTestServlet&quot;},&#160;&#160;&#160;asyncSupported=true)&quot;&gt;</pre>
+    <h4>
+      web.xml:
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;servlet&gt;
+    &lt;servlet-name&gt;AsyncTestServlet&lt;/servlet-name&gt;
+    &lt;servlet-class&gt;com.enthuware.AsyncTestServlet&lt;/servlet-class&gt;
+    &lt;async-supported&gt;true&lt;/async-supported&gt;
+&lt;/servlet&gt;</pre>
+    <h4>
+      To dispatch a request from an asynchronous thread
+    </h4>
+    <ul>
+      <li>
+        Use methods complete() or dispatch() in AsyncContext
+      </li>
+      <li>
+        There is no getServletContext() method in AsyncContext.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431502625662" TEXT="RequestDispatcher">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      The&#160;<code>RequestDispatcher</code>&#160;object that acts as a wrapper for the resource located at the given path. A <code>RequestDispatcher</code>&#160;object can be used to forward a request to the resource or to include the resource in a response. The resource can be dynamic or static.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      The object is used in these ways:
+    </p>
+    <ul>
+      <li>
+        <code>ServletContext.getRequestDispatcher </code>- the pathname is absolute and must begin with a &quot;/&quot; and is interpreted as relative to the current context root. Use getContext to obtain a RequestDispatcher for resources in foreign contexts. This method returns null if the ServletContext cannot return a RequestDispatcher.
+      </li>
+      <li>
+        <code>ServletRequest.getRequestDispatcher </code>-&#160;&#160;the pathname is relative. If the path begins with a &quot;/&quot; it is interpreted as relative to the current context root. This method returns <code>null</code>&#160;&#160;if the servlet container cannot return a <code>RequestDispatcher</code>.
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
+</node>
 <node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431007350675" TEXT="Registration Interfaces ">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -27,28 +239,95 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431011121659" ID="ID_1909152799" MODIFIED="1431011302476" TEXT="Others">
+<node CREATED="1431502880138" ID="ID_299698878" MODIFIED="1431502967377" TEXT="Supported annotations">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
-    <h4>
-      Loading resource from web-app
-    </h4>
     <p>
-      The path must begin with a &quot;/&quot; and is interpreted as relative to the current context root. For example, if the Web Application is stored in c:\tomcat\webapps\MyWebApp, the MyWebApp directory is the context root.
+      The Servlet 3.0 specification (Section 15.5) specifies all the annotations that must be supported by the servlet container for Servlet, Filter, or various Listener classes. The following is the list for your convenience:
     </p>
-    <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">InputStream is = context.getResourceAsStream(&quot;/WEB-INF/data.zip&quot;);
-    </pre>
-    <h4>
-      Registering servlet or filter
-    </h4>
-    <p>
-      We can add a servlet or a filter dynamically only before the initialization of the servlet context is complete. Here, &quot;initialization of a servlet context&quot; means initialization of the web application. Initialization is not considered complete until contextInitialized() of all ServletContextListeners is complete. So you can register a servlet in contextInitialized() of a ServletContextListener.
-    </p>
+    <ul>
+      <li>
+        @DeclareRoles
+      </li>
+      <li>
+        @EJB
+      </li>
+      <li>
+        @EJBs
+      </li>
+      <li>
+        @Resource
+      </li>
+      <li>
+        @PersistenceContext
+      </li>
+      <li>
+        @PersistenceContexts
+      </li>
+      <li>
+        @PersistenceUnit
+      </li>
+      <li>
+        @PersistenceUnits
+      </li>
+      <li>
+        @PostConstruct
+      </li>
+      <li>
+        @PreDestroy
+      </li>
+      <li>
+        @Resources
+      </li>
+      <li>
+        @RunAs
+      </li>
+      <li>
+        @WebServiceRef
+      </li>
+      <li>
+        @WebServiceRefs
+      </li>
+    </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
+</node>
+<node CREATED="1431504053510" ID="ID_1352423099" MODIFIED="1431504232602" TEXT="MultipartConfig">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>@MultipartConfig</b>&#160;annotation, when specified on a Servlet, indicates that the request it expects is of type mime/multipart. The HttpServletRequest object of the corresponding servlet MUST make available the mime attachments via the <b>getParts</b>&#160;and <b>getPart</b>&#160; methods to iterate over the various mime attachments.
+    </p>
+    <p>
+      
+    </p>
+    <p>
+      @MultipartConfig annotation has the following attributes&#160;&#160;(All are optional):&#160;
+    </p>
+    <ul>
+      <li>
+        int <b>fileSizeThreshold </b>- The size threshold after which the file will be written to disk
+      </li>
+      <li>
+        java.lang.String <b>location </b>- The directory location where files will be stored
+      </li>
+      <li>
+        long <b>maxFileSize</b>&#160;- The maximum size allowed for uploaded files.
+      </li>
+      <li>
+        long <b>maxRequestSize</b>&#160;- The maximum size allowed for multipart/form-data requests
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
 </node>
 </node>
 <node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431008365808" POSITION="right" TEXT="Filter">
@@ -571,17 +850,27 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431000524427" ID="ID_1843986136" MODIFIED="1431000543249" TEXT="Listeners">
+<node CREATED="1431000524427" ID="ID_1843986136" MODIFIED="1431503850473" TEXT="Listeners">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
+    <h4>
+      @WebListener
+    </h4>
+    <p>
+      Any class annotated with <b>@WebListener</b>&#160;must implement one or more of the ServletContextListener, ServletContextAttributeListener, ServletRequestListener, ServletRequestAttributeListener, HttpSessionListener, or HttpSessionAttributeListener interfaces.
+    </p>
+    <h4>
+      Precedence
+    </h4>
     <p>
       The listeners are invoked in the order of their appearance in web.xml. The &quot;destroyed&quot; method is invoked in the reverse order.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node CREATED="1431000556154" ID="ID_1452735659" MODIFIED="1431000591777" TEXT="Context params">
 <richcontent TYPE="NOTE"><html>
@@ -1277,7 +1566,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 <node CREATED="1430910223227" ID="ID_701736353" MODIFIED="1430910409934" TEXT="The processing state is not inherited across invocations and this makes it a lot more complicated to manage sessions."/>
 <node CREATED="1430910233147" ID="ID_1665340830" MODIFIED="1430910234319" TEXT="Simple requests that do not involve complex business logic are significantly easier to process using CGI (just script) instead of servlets."/>
 </node>
-<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431007399854" POSITION="left" TEXT="JSTL">
+<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431504558717" POSITION="left" TEXT="JSTL">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430913733459" ID="ID_1469782263" MODIFIED="1430913751797" TEXT="Accessing values from map">
 <richcontent TYPE="NOTE"><html>
@@ -2063,6 +2352,64 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
+</node>
+<node CREATED="1431505982270" ID="ID_662085648" MODIFIED="1431506079653" POSITION="left" TEXT="API">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <a href="http://docs.oracle.com/javaee/6/api/index.html?overview-summary.html">JavaEE 6 - API</a>
+    </p>
+  </body>
+</html>
+</richcontent>
+<font BOLD="true" NAME="SansSerif" SIZE="14"/>
+</node>
+<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431506569092" POSITION="left" TEXT="Session">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Timeout is defined in minutes or -1 to eliminate timeouting (the session will never timeout).
+    </p>
+    <h4>
+      XML
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;web-app ...&gt;
+&#x9;&lt;session-config&gt;
+&#x9;&#x9;&lt;session-timeout&gt;20&lt;/session-timeout&gt;
+&#x9;&lt;/session-config&gt;
+&lt;/web-app&gt;   
+    </pre>
+    <h4>
+      Java
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">request.getSession().setMaxInactiveInterval(-1);</pre>
+    <h4>
+      Session invalidation:
+    </h4>
+    <p>
+      The following is the sequence of things that happen when you invalidate a session:
+    </p>
+    <ol>
+      <li>
+        Container calls sessionDestroyed() on all HttpSessionListeners configured in web.xml (in the reverse order they are declared in web.xml). Notice that although the method name is sessionDestroyed, the session is not destroyed yet. It is about to be destroyed. (Note that sessionCreated is called on the listeners in the order they are declared in web.xml)&#160;
+      </li>
+      <li>
+        The container destroys the session.&#160;
+      </li>
+      <li>
+        The container calls valueUnbound() on all the session attributes that implement HttpSessionBindinglistener interface.
+      </li>
+    </ol>
+  </body>
+</html>
+</richcontent>
+<font BOLD="true" NAME="SansSerif" SIZE="14"/>
 </node>
 </node>
 </map>
