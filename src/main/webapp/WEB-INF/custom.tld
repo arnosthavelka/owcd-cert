@@ -1,5 +1,8 @@
-<taglib>
-	<tlib-version>1.0</tlib-version>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+    version="2.0">
+	<tlib-version>2.0</tlib-version>
 	<jsp-version>2.0</jsp-version>
 	<short-name>Custom TLD</short-name>
 	<tag>
@@ -12,4 +15,10 @@
 		<tag-class>com.github.aha.cert.tag.ErrorTag</tag-class>
 		<body-content>empty</body-content>
 	</tag>
+	
+    <function>
+        <name>toCase</name>
+        <function-class>com.github.aha.cert.tag.CaseFunction</function-class>
+        <function-signature>java.lang.String toCase(java.lang.Integer, java.lang.String)</function-signature>
+    </function>	
 </taglib>

@@ -12,6 +12,19 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
+	<h3>For-each (with delimiting values)</h3>
+	Result: 
+	<c:forTokens items="Ann,Bob,Charlie" var="name" delims=",">
+		<c:out value="${name}"/>
+	</c:forTokens>	
+	
+	<?prettify lang=jsp linenums=true?>
+	<pre class="prettyprint">
+&lt;c:forTokens items="Ann,Bob,Charlie" var="name" delims=","&gt;
+	&lt;c:out value="${name}"/&gt;
+&lt;/c:forTokens&gt;</pre>
+
+	<h3>Error handling</h3>
 	<c:catch var="e">
 		<ex:error />
 	</c:catch>

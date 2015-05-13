@@ -12,20 +12,28 @@
 	<script src="gcp/run_prettify.js" defer="defer"></script>
 </head>
 <body>
-	Tag declation: 
+	<h4>Tag declation</h4> 
 	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;%@ taglib prefix="ex" uri="WEB-INF/custom.tld"%&gt;</pre>
 
-	Empty tag: <ex:hello/><br/> 
+	<h4>Empty tag</h4>
+	Result: <ex:hello/><br/> 
 	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;ex:hello/&gt;</pre>
 	
-	Body tag: <ex2:greeting>Lucy</ex2:greeting><br/>
+	<h4>Body tag</h4>
+	Result: <ex2:greeting>Lucy</ex2:greeting><br/>
 	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;ex2:greeting&gt;Lucy&lt;/ex2:greeting/&gt;</pre>
 
-	Body tag with attribute: <ex2:greeting name="Julie">Romeo</ex2:greeting><br/>
+	<h4>Body tag with attribute</h4>
+	Result: <ex2:greeting name="Julie">Romeo</ex2:greeting><br/>
 	<?prettify lang=jsp linenums=false?>
 	<pre class="prettyprint">&lt;ex2:greeting name="Julie"&gt;Romeo&lt;/ex2:greeting/&gt;</pre>
+
+	<h4>Custom function</h4>
+	Result: ${ex:toCase(1, 'Sylvia')} | ${ex:toCase(2, 'Sylvia')}<br/>
+	<?prettify lang=jsp linenums=false?>
+	<pre class="prettyprint">${"${ex:toCase(1, 'Sylvia')} | ${ex:toCase(2, 'Sylvia')}"}</pre>
 </body>
 </html>
