@@ -1,6 +1,31 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431000641875" TEXT="OWCD">
+<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431507126090" TEXT="OWCD">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <h1>
+      AHA MindMap for OWCD certification
+    </h1>
+    <h3>
+      [1Z0-899 - Java EE 6 Web Component Developer Certified Expert]
+    </h3>
+    <ul>
+      <li>
+        <a href="https://github.com/arnosthavelka/owcd-cert">AHA study examples</a>
+      </li>
+      <li>
+        <a href="http://www.tutorialspoint.com/jsp/index.htm">JSP tutorial</a>
+      </li>
+      <li>
+        <a href="http://docs.oracle.com/javaee/6/api/index.html?overview-summary.html">JavaEE 6 - API</a>
+      </li>
+    </ul>
+  </body>
+</html>
+</richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="20"/>
 <node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1430922736242" POSITION="right" TEXT="Servlet">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
@@ -51,8 +76,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431503302404" ID="ID_778527702" MODIFIED="1431503543831" TEXT="Request URL">
 <richcontent TYPE="NOTE"><html>
@@ -76,8 +100,7 @@
       Complete=http://localhost:8080/test/aaa/abc.a?foo=Aha&amp;hoo=true
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431501561841" ID="ID_349919807" MODIFIED="1431505703348" TEXT="Attributes &amp; Parameters">
 <richcontent TYPE="NOTE"><html>
@@ -120,8 +143,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431504521046" TEXT="Cookies">
 <richcontent TYPE="NOTE"><html>
@@ -150,8 +172,7 @@ for(Cookie c :&#160;&#160;cs){
     }
 }</pre>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431506507411" TEXT="Asynchronous processing ">
 <richcontent TYPE="NOTE"><html>
@@ -186,8 +207,7 @@ for(Cookie c :&#160;&#160;cs){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431502625662" TEXT="RequestDispatcher">
 <richcontent TYPE="NOTE"><html>
@@ -213,8 +233,7 @@ for(Cookie c :&#160;&#160;cs){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431007350675" TEXT="Registration Interfaces ">
 <richcontent TYPE="NOTE"><html>
@@ -293,8 +312,7 @@ for(Cookie c :&#160;&#160;cs){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431504053510" ID="ID_1352423099" MODIFIED="1431504232602" TEXT="MultipartConfig">
 <richcontent TYPE="NOTE"><html>
@@ -326,11 +344,10 @@ for(Cookie c :&#160;&#160;cs){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431008365808" POSITION="right" TEXT="Filter">
+<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431506630248" POSITION="right" TEXT="Filter">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430996392395" ID="ID_200801889" MODIFIED="1430997485371" TEXT="Anotation">
 <richcontent TYPE="NOTE"><html>
@@ -869,8 +886,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       The listeners are invoked in the order of their appearance in web.xml. The &quot;destroyed&quot; method is invoked in the reverse order.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431000556154" ID="ID_1452735659" MODIFIED="1431000591777" TEXT="Context params">
 <richcontent TYPE="NOTE"><html>
@@ -934,7 +950,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431501425871" TEXT="JAR library (web-fragment.xml)">
+<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431507070054" TEXT="JAR library (web-fragment.xml)">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -950,7 +966,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </richcontent>
 </node>
 </node>
-<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431011119503" POSITION="right" TEXT="JSP">
+<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431506628361" POSITION="right" TEXT="JSP">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430915044834" ID="ID_1807315546" MODIFIED="1430915311817" TEXT="Basic syntax">
 <richcontent TYPE="NOTE"><html>
@@ -1566,7 +1582,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 <node CREATED="1430910223227" ID="ID_701736353" MODIFIED="1430910409934" TEXT="The processing state is not inherited across invocations and this makes it a lot more complicated to manage sessions."/>
 <node CREATED="1430910233147" ID="ID_1665340830" MODIFIED="1430910234319" TEXT="Simple requests that do not involve complex business logic are significantly easier to process using CGI (just script) instead of servlets."/>
 </node>
-<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431504558717" POSITION="left" TEXT="JSTL">
+<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431506635497" POSITION="left" TEXT="JSTL">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430913733459" ID="ID_1469782263" MODIFIED="1430913751797" TEXT="Accessing values from map">
 <richcontent TYPE="NOTE"><html>
@@ -2353,21 +2369,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1431505982270" ID="ID_662085648" MODIFIED="1431506079653" POSITION="left" TEXT="API">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      <a href="http://docs.oracle.com/javaee/6/api/index.html?overview-summary.html">JavaEE 6 - API</a>
-    </p>
-  </body>
-</html>
-</richcontent>
-<font BOLD="true" NAME="SansSerif" SIZE="14"/>
-</node>
-<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431506569092" POSITION="left" TEXT="Session">
+<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431507084325" POSITION="left" TEXT="Session">
 <richcontent TYPE="NOTE"><html>
   <head>
     
