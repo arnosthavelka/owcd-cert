@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431507126090" TEXT="OWCD">
+<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431595280001" TEXT="OWCD">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -24,8 +24,7 @@
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="20"/>
 <node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1431526939414" POSITION="right" TEXT="Servlet">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
@@ -182,22 +181,21 @@ if(cs != null){
  &#160;&#160;}
 }</pre>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431506507411" TEXT="Asynchronous processing ">
+<node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431606923576" TEXT="Asynchronous processing ">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
     <p>
-      A servlet that is marked with <b>asyncSupported=true</b>&#160;can choose not to defer the processing and finish the processing in the same thread effectively working as a synchronous processor. This is correct.
+      A servlet can work in both synchronous and asynchronous mode. The asynchronous servlet marked with <b>asyncSupported=true</b>&#160;can choose not to defer the processing and finish the processing in the same thread effectively working as a synchronous processor.
     </p>
     <h4>
       Annotation
     </h4>
-    <pre rgb="#DEFAULT" background-color="#DEFAULT" webservlet="#DEFAULT" name="" asynctestservlet="#DEFAULT" urlpatterns="{">AsyncTestServlet&quot;},&#160;&#160;&#160;asyncSupported=true)&quot;&gt;</pre>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">@WebServlet(value = &quot;/async&quot;, asyncSupported = true)</pre>
     <h4>
       web.xml:
     </h4>
@@ -218,7 +216,8 @@ if(cs != null){
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 <node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431522584750" TEXT="RequestDispatcher">
 <richcontent TYPE="NOTE"><html>
@@ -247,8 +246,7 @@ if(cs != null){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431007350675" TEXT="Registration Interfaces ">
 <richcontent TYPE="NOTE"><html>
@@ -361,7 +359,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431526945196" ID="ID_1730819538" MODIFIED="1431527026067" TEXT="Forward">
+<node CREATED="1431526945196" ID="ID_1730819538" MODIFIED="1431595277132" TEXT="Forward">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -578,8 +576,7 @@ public class GreetingFilter implements Filter {
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <node CREATED="1430999414010" ID="ID_1844018794" MODIFIED="1431000047220" TEXT="Annotation">
 <richcontent TYPE="NOTE"><html>
   <head>
@@ -1004,8 +1001,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;%@taglib uri=&quot;/stats&quot; prefix=&quot;stats&quot; %&gt;
 &lt;%@taglib tagdir=&quot;/WEB-INF/tags/stats&quot; prefix=&quot;stats&quot; %&gt;</pre>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431524738343" FOLDED="true" ID="ID_525420565" MODIFIED="1431526743434" TEXT="web-fragments">
 <node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431526516495" TEXT="JAR library">
@@ -1029,8 +1025,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431524780579" ID="ID_476806081" MODIFIED="1431524988850" TEXT="Absolute ordering">
 <richcontent TYPE="NOTE"><html>
@@ -1059,12 +1054,11 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
-<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431526027084" POSITION="right" TEXT="JSP">
+<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431604095026" POSITION="right" TEXT="JSP">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430915044834" ID="ID_1807315546" MODIFIED="1430915311817" TEXT="Basic syntax">
 <richcontent TYPE="NOTE"><html>
@@ -1352,7 +1346,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430914155787" ID="ID_1888729900" MODIFIED="1430914895389" TEXT="Include">
+<node CREATED="1430914155787" ID="ID_1888729900" MODIFIED="1431603989114" TEXT="Include">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1376,9 +1370,10 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       Check more detail related to include directive at&#160;<a href="http://www.tutorialspoint.com/jsp/include_directive.htm" style="color: rgb(49, 49, 49); text-decoration: none; padding-right: 22px; padding-bottom: 2px; font-weight: bold; background-image: url(http://cdn.tutorialspoint.com/images/link-icon.png); background-position: 100% 50%; background-repeat: no-repeat; background-attachment: scroll"><font color="rgb(49, 49, 49)"><b>Include Directive</b></font></a>.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430914353586" ID="ID_95828921" MODIFIED="1430914945433" TEXT="Taglib">
+<node CREATED="1430914353586" ID="ID_95828921" MODIFIED="1431604072632" TEXT="Taglib">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1393,20 +1388,21 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     <p>
       The taglib directive follows the following syntax:
     </p>
-    <pre class="prettyprint notranslate prettyprinted" style="font-family: Menlo, Monaco, Consolas, Courier New, monospace; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; width: 604px; line-height: 16px; font-size: 12px; color: rgb(49, 49, 49); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(238, 238, 238)"><font color="rgb(102, 102, 0)">&lt;%@</font> taglib uri<font color="rgb(102, 102, 0)">=</font><font color="rgb(0, 136, 0)">&quot;uri&quot;</font> prefix<font color="rgb(102, 102, 0)">=</font><font color="rgb(0, 136, 0)">&quot;prefixOfTag&quot;</font> <font color="rgb(102, 102, 0)">&gt;</font></pre>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)"><font color="rgb(102, 102, 0)">&lt;%@</font> taglib uri<font color="rgb(102, 102, 0)">=</font><font color="rgb(0, 136, 0)">&quot;uri&quot;</font> prefix<font color="rgb(102, 102, 0)">=</font><font color="rgb(0, 136, 0)">&quot;prefixOfTag&quot;</font> <font color="rgb(102, 102, 0)">&gt;</font></pre>
     <p>
-      Where the&#160;<b>uri</b>&#160;attribute value resolves to a location the container understands and the<b>prefix</b>&#160;attribute informs a container what bits of markup are custom actions.
+      Where the&#160;<b>uri</b>&#160;attribute value resolves to a location the container understands and the <b>prefix</b>&#160;attribute informs a container what bits of markup are custom actions.
     </p>
     <h2>
       Example:
     </h2>
-    <pre class="prettyprint notranslate prettyprinted" style="font-family: Menlo, Monaco, Consolas, Courier New, monospace; padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; margin-top: 0px; margin-right: 0px; margin-bottom: 10px; margin-left: 0px; width: 604px; line-height: 16px; font-size: 12px; color: rgb(49, 49, 49); font-style: normal; font-variant: normal; font-weight: normal; letter-spacing: normal; text-align: start; text-indent: 0px; text-transform: none; word-spacing: 0px; background-color: rgb(238, 238, 238)">&lt;%@ taglib uri=&quot;uri&quot; prefix=&quot;pot&quot; &gt;
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;%@ taglib uri=&quot;uri&quot; prefix=&quot;pot&quot; &gt;
 &lt;pot:someTag /&gt;</pre>
     <p>
       Check more detail related to taglib directive at&#160;<a href="http://www.tutorialspoint.com/jsp/taglib_directive.htm" style="color: rgb(49, 49, 49); text-decoration: none; padding-right: 22px; padding-bottom: 2px; font-weight: bold; background-image: url(http://cdn.tutorialspoint.com/images/link-icon.png); background-position: 100% 50%; background-repeat: no-repeat; background-attachment: scroll"><font color="rgb(49, 49, 49)"><b>Taglib Directive</b></font></a>.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 </node>
 <node CREATED="1430915452689" ID="ID_1299622676" MODIFIED="1431006254631" TEXT="Actions">
@@ -1483,8 +1479,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     </p>
     <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;jsp:setProperty name=&quot;user&quot; property=&quot;country&quot; value=&lt;%=request.getParameter(&quot;country&quot;)%&gt; /&gt;</pre>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1430990618126" ID="ID_305644191" MODIFIED="1431008296610" TEXT="include">
 <richcontent TYPE="NOTE"><html>
@@ -1587,7 +1582,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990364597" ID="ID_1837574644" MODIFIED="1430990529679" TEXT="Others">
+<node CREATED="1430990364597" ID="ID_1837574644" MODIFIED="1431595371260" TEXT="Others">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1601,10 +1596,10 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     </p>
     <ul>
       <li>
-        translation phase - done once per page
+        translation phase - done once per page. The container validates the syntactic correctness of the JSP pages and the tag files.
       </li>
       <li>
-        request phase. - done once per request
+        request phase - done once per request
       </li>
     </ul>
     <h4>
@@ -1614,10 +1609,11 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       javax.servlet.jsp.JspWriter
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
 </node>
-<node CREATED="1430910154440" FOLDED="true" ID="ID_1171667824" MODIFIED="1431007397669" POSITION="right" TEXT="Design patterns">
+<node CREATED="1430910154440" FOLDED="true" ID="ID_1171667824" MODIFIED="1431595563999" POSITION="right" TEXT="Design patterns">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
 <node CREATED="1430910456234" ID="ID_467389040" MODIFIED="1430910473686" TEXT="Front Controller / Front Component">
 <richcontent TYPE="NOTE"><html>
@@ -2518,8 +2514,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </li>
     </ol>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 <node CREATED="1431522842800" ID="ID_1441732741" MODIFIED="1431523359244" TEXT="Session management">
 <richcontent TYPE="NOTE"><html>
@@ -2563,8 +2558,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 &#160;&#160;&lt;/cookie-config&gt; 
 &lt;/session-config&gt;</pre>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
 </node>
