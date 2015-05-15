@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431595280001" TEXT="OWCD">
+<node CREATED="1430910036537" ID="ID_82117308" MODIFIED="1431674559497" STYLE="fork" TEXT="OWCD">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -26,9 +26,9 @@
   </body>
 </html></richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="20"/>
-<node CREATED="1430910125111" ID="ID_157709823" MODIFIED="1431526939414" POSITION="right" TEXT="Servlet">
+<node CREATED="1430910125111" FOLDED="true" ID="ID_157709823" MODIFIED="1431674564158" POSITION="right" STYLE="fork" TEXT="Servlet">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1431011121659" ID="ID_1909152799" MODIFIED="1431506125557" TEXT="General">
+<node CREATED="1431011121659" ID="ID_1909152799" MODIFIED="1431672952581" STYLE="fork" TEXT="General">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -77,7 +77,7 @@
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431503302404" ID="ID_778527702" MODIFIED="1431503543831" TEXT="Request URL">
+<node CREATED="1431503302404" ID="ID_778527702" MODIFIED="1431673556947" STYLE="fork" TEXT="Request URL">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -90,18 +90,21 @@
       Request URL = protocol://host:port + requestURI (contextpath + servletpath + pathinfo)
     </p>
     <h4>
+      Explanation
+    </h4>
+    <p>
+      Request URL = http://localhost:8080 + requestURI (&quot;/test&quot; + &quot;/aaa/abc.a&quot; + &quot;foo=Aha&amp;hoo=true&quot;)
+    </p>
+    <h4>
       Example
     </h4>
     <p>
-      Request URL = http://localhost:8080 + requestURI (/test + /aaa/abc.a + foo=Aha&amp;hoo=true)
-    </p>
-    <p>
-      Complete=http://localhost:8080/test/aaa/abc.a?foo=Aha&amp;hoo=true
+      Complete URL = <b>http://localhost:8080/test/aaa/abc.a?foo=Aha&amp;hoo=true</b>
     </p>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431501561841" ID="ID_349919807" MODIFIED="1431505703348" TEXT="Attributes &amp; Parameters">
+<node CREATED="1431501561841" ID="ID_349919807" MODIFIED="1431673761463" STYLE="fork" TEXT="Attributes &amp; Parameters">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -141,10 +144,21 @@
         <b>ServletContext </b>- The objects stored here will be discarded only when this web application stops and up till then you can access it from any place/request irrespective of the session. Normally, initialization parameters are kept in this scope.
       </li>
     </ul>
+    <p>
+      Retrieving request attributes (from ServletRequest) is done by these methods:
+    </p>
+    <ul>
+      <li>
+        <i>getAttributesNames</i>() - returns an <code>Enumeration</code>&#160;of <code>String</code>&#160; objects containing the&#160;names of the attributes available to this request. This method returns an empty <code>Enumeration</code>&#160;if the request has no attributes available to it.
+      </li>
+      <li>
+        <i>getAttribute</i>(&quot;xyz&quot;) - returns the value of the named attribute as an <code>Object</code>, or <code>null</code>&#160;if no attribute of the given name exists.
+      </li>
+    </ul>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431522116656" TEXT="Cookies">
+<node CREATED="1431504247295" ID="ID_300429810" MODIFIED="1431672952581" STYLE="fork" TEXT="Cookies">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -183,7 +197,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431606923576" TEXT="Asynchronous processing ">
+<node CREATED="1431503587557" ID="ID_8425583" MODIFIED="1431672952581" STYLE="fork" TEXT="Asynchronous processing ">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -216,10 +230,9 @@ if(cs != null){
       </li>
     </ul>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431522584750" TEXT="RequestDispatcher">
+<node CREATED="1431501991210" ID="ID_1243161340" MODIFIED="1431672952581" STYLE="fork" TEXT="RequestDispatcher">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -248,7 +261,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431007350675" TEXT="Registration Interfaces ">
+<node CREATED="1431007282333" ID="ID_934579683" MODIFIED="1431672952581" STYLE="fork" TEXT="Registration Interfaces ">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -271,7 +284,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431502880138" ID="ID_299698878" MODIFIED="1431502967377" TEXT="Supported annotations">
+<node CREATED="1431502880138" ID="ID_299698878" MODIFIED="1431672952582" STYLE="fork" TEXT="Supported annotations">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -327,7 +340,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431504053510" ID="ID_1352423099" MODIFIED="1431504232602" TEXT="MultipartConfig">
+<node CREATED="1431504053510" ID="ID_1352423099" MODIFIED="1431672952582" STYLE="fork" TEXT="MultipartConfig">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -359,7 +372,7 @@ if(cs != null){
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431526945196" ID="ID_1730819538" MODIFIED="1431595277132" TEXT="Forward">
+<node CREATED="1431526945196" ID="ID_1730819538" MODIFIED="1431672952582" STYLE="fork" TEXT="Forward">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -388,28 +401,284 @@ if(cs != null){
       Your servlet can use<font face="monospace">&#160;request.getAttribute(&quot;javax.servlet.forward.request_uri&quot;) </font>to get the URI that was requested by the user.<br /><br />However, if the forwarded servlet was obtained by using the <font face="monospace">getNamedDispatcher</font>&#160;method, these attributes are not be set. How can the original requestion information be obtained in this situation is not clear from the specification.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431526937383" POSITION="right" TEXT="Filter">
+<node CREATED="1430996388802" FOLDED="true" ID="ID_655668538" MODIFIED="1431674751867" POSITION="right" STYLE="fork" TEXT="Filter">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430996392395" ID="ID_200801889" MODIFIED="1430997485371" TEXT="Anotation">
+<node CREATED="1430996392395" ID="ID_200801889" MODIFIED="1431674701094" STYLE="fork" TEXT="Anotation">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
-    <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">@WebFilter(value = &quot;/greetingA&quot;, initParams = @WebInitParam(name = &quot;name&quot;, value = &quot;Isabelle&quot;))
+    <h4>
+      Attributes
+    </h4>
+    <table>
+      <tr>
+        <th style="background-color: gray; width: 150px">
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b><font color="white">Name</font></b></strong>
+          </p>
+        </th>
+        <th style="background-color: gray; width: 150px">
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b><font color="white">Type</font></b></strong>
+          </p>
+        </th>
+        <th style="background-color: gray; width: 150px">
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b><font color="white">Required</font></b></strong>
+          </p>
+        </th>
+        <th style="background-color: gray; width: 150px">
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b><font color="white">Description</font></b></strong>
+          </p>
+        </th>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>filterName</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Name of the filter.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>value</b></strong>
+          </p>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            or
+          </p>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>urlPatterns</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String[]</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>Required</b></strong>
+          </p>
+        </td>
+        <td valign="top" width="307">
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify one or more URL patterns to which the filter applies. Either of attribute can be used, but not both.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>dispatcherTypes</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>DispatcherType[]</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify types of dispatcher to which the filter applies. Default is<font face="Courier New">javax.servlet.DispatcherType.REQUEST (FORWARD|INCLUDE|REQUEST|ASYNC|ERROR)</font>
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>servletNames</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String[]</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify names of servlets to which the filter applies.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>displayName</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Display name of the filter.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>description</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Description of the filter.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>asyncSupported</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>boolean</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify whether the filter supports asynchronous operation mode. Default is false.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>initParams</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>WebInitParam[]</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify one or more initialization parameters of the filter. Each parameter is specified by<font color="rgb(9, 81, 151)" face="Courier New"><a href="http://www.codejava.net/java-ee/servlet/webinitparam-annotation-examples" style="color: rgb(9, 81, 151); text-decoration: none">@WebInitParam</a></font>&#160;annotation type.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>smallIcon</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify name of the small icon of the filter.
+          </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <strong style="font-weight: bold"><b>largeIcon</b></strong>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            <i>String</i>
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Optional
+          </p>
+        </td>
+        <td>
+          <p style="margin-top: 0px; margin-right: 0px; margin-bottom: 0.0001pt; margin-left: 0px; line-height: normal">
+            Specify name of the large icon of the filter.
+          </p>
+        </td>
+      </tr>
+    </table>
+    <h4>
+      Example
+    </h4>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">@WebFilter(value = &quot;/greetingA&quot;, initParams = @WebInitParam(name = &quot;name&quot;, value = &quot;Isabelle&quot;))
 public class GreetingFilter implements Filter {
     public void init(FilterConfig config) throws ServletException {
         name  = config.getInitParameter(&quot;name&quot;);
     }
 }</pre>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430996397938" ID="ID_1334963314" MODIFIED="1430997453269" TEXT="XML">
+<node CREATED="1430996397938" ID="ID_1334963314" MODIFIED="1431672952578" STYLE="fork" TEXT="XML">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -427,7 +696,7 @@ public class GreetingFilter implements Filter {
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430996400139" ID="ID_258575327" MODIFIED="1430996430492" TEXT="Filter mapping &amp; registration">
+<node CREATED="1430996400139" ID="ID_258575327" MODIFIED="1431672952578" STYLE="fork" TEXT="Filter mapping &amp; registration">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -448,16 +717,16 @@ public class GreetingFilter implements Filter {
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1430910130167" FOLDED="true" ID="ID_761648779" MODIFIED="1431526938367" POSITION="right" TEXT="web.xml">
+<node CREATED="1430910130167" FOLDED="true" ID="ID_761648779" MODIFIED="1431680481952" POSITION="right" STYLE="fork" TEXT="web.xml">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430997168542" ID="ID_1947129208" MODIFIED="1430997929022" TEXT="Basics">
+<node CREATED="1430997168542" ID="ID_1947129208" MODIFIED="1431674770011" STYLE="fork" TEXT="Basics">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
     <h4>
-      Elements:
+      First elements:
     </h4>
     <ul>
       <li>
@@ -521,9 +790,10 @@ public class GreetingFilter implements Filter {
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430998241378" ID="ID_459968622" MODIFIED="1430998281374" TEXT="Precedence rules">
+<node CREATED="1430998241378" ID="ID_459968622" MODIFIED="1431672952577" STYLE="fork" TEXT="Precedence rules">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -561,7 +831,7 @@ public class GreetingFilter implements Filter {
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430997507665" FOLDED="true" ID="ID_1907122268" MODIFIED="1431522723176" TEXT="Security">
+<node CREATED="1430997507665" FOLDED="true" ID="ID_1907122268" MODIFIED="1431675257723" STYLE="fork" TEXT="Security">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -569,15 +839,16 @@ public class GreetingFilter implements Filter {
   <body>
     <ul>
       <li>
-        The concept of the declarative security model does not apply in case of include and forward actions. Thus, an unprotected resource can have a call to a protected resource without having the user to log in.
+        The concept of the declarative security model does not apply in case of include and forward actions. Thus, an unprotected resource (e.g. unprotected JSP page includes protected JSP) can have a call to a protected resource without having the user to log in.
       </li>
       <li>
         The application data is secured by factors &quot;data integrity&quot; and &quot;confidentiality&quot;.
       </li>
     </ul>
   </body>
-</html></richcontent>
-<node CREATED="1430999414010" ID="ID_1844018794" MODIFIED="1431000047220" TEXT="Annotation">
+</html>
+</richcontent>
+<node CREATED="1430999414010" ID="ID_1844018794" MODIFIED="1431672952577" STYLE="fork" TEXT="Annotation">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -670,7 +941,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430999367760" ID="ID_550085136" MODIFIED="1430999385543" TEXT="XML">
+<node CREATED="1430999367760" ID="ID_550085136" MODIFIED="1431672952577" STYLE="fork" TEXT="XML">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -699,7 +970,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     </pre>
   </body>
 </html></richcontent>
-<node CREATED="1430998394447" ID="ID_387314499" MODIFIED="1430998736488" TEXT="Element &lt;security-constraint&gt;">
+<node CREATED="1430998394447" ID="ID_387314499" MODIFIED="1431675172403" STYLE="fork" TEXT="Element &lt;security-constraint&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -711,8 +982,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </li>
     </ul>
   </body>
-</html></richcontent>
-<node CREATED="1430998436190" ID="ID_1330289830" MODIFIED="1430998677516" TEXT="Element &lt;web-resource-collection&gt;">
+</html>
+</richcontent>
+<node CREATED="1430998436190" ID="ID_1330289830" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;web-resource-collection&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -741,7 +1013,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430997640143" ID="ID_1973592386" MODIFIED="1430998800166" TEXT="Element &lt;auth-constraint&gt;">
+<node CREATED="1430997640143" ID="ID_1973592386" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;auth-constraint&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -758,7 +1030,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430998046558" ID="ID_708332595" MODIFIED="1430998166629" TEXT="Element &lt;user-data-constraint&gt;">
+<node CREATED="1430998046558" ID="ID_708332595" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;user-data-constraint&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -776,7 +1048,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1430998768322" ID="ID_1030928743" MODIFIED="1431010475541" TEXT="Element &lt;login-config&gt;">
+<node CREATED="1430998768322" ID="ID_1030928743" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;login-config&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -793,7 +1065,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430998985763" ID="ID_1738997698" MODIFIED="1430999045919" TEXT="Element &lt;security-role&gt;">
+<node CREATED="1430998985763" ID="ID_1738997698" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;security-role&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -807,7 +1079,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430998992834" ID="ID_1390899959" MODIFIED="1431000090923" TEXT="Element &lt;security-role-ref&gt;">
+<node CREATED="1430998992834" ID="ID_1390899959" MODIFIED="1431672952577" STYLE="fork" TEXT="Element &lt;security-role-ref&gt;">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -835,7 +1107,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1431000092067" ID="ID_1282216341" MODIFIED="1431000217490" TEXT="Form based security">
+<node CREATED="1431000092067" ID="ID_1282216341" MODIFIED="1431672952577" STYLE="fork" TEXT="Form based security">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -863,7 +1135,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1431000275200" ID="ID_106405380" MODIFIED="1431417771871" TEXT="Resources">
+<node CREATED="1431000275200" ID="ID_106405380" MODIFIED="1431672952577" STYLE="fork" TEXT="Resources">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -917,7 +1189,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431000524427" ID="ID_1843986136" MODIFIED="1431503850473" TEXT="Listeners">
+<node CREATED="1431000524427" ID="ID_1843986136" MODIFIED="1431675339014" STYLE="fork" TEXT="Listeners">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -927,8 +1199,28 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       @WebListener
     </h4>
     <p>
-      Any class annotated with <b>@WebListener</b>&#160;must implement one or more of the ServletContextListener, ServletContextAttributeListener, ServletRequestListener, ServletRequestAttributeListener, HttpSessionListener, or HttpSessionAttributeListener interfaces.
+      Any class annotated with <b>@WebListener</b>&#160;must implement one or more of these interfaces:
     </p>
+    <ul>
+      <li>
+        ServletContextListener
+      </li>
+      <li>
+        ServletContextAttributeListener
+      </li>
+      <li>
+        ServletRequestListener
+      </li>
+      <li>
+        ServletRequestAttributeListener
+      </li>
+      <li>
+        HttpSessionListener
+      </li>
+      <li>
+        HttpSessionAttributeListener
+      </li>
+    </ul>
     <h4>
       Precedence
     </h4>
@@ -936,9 +1228,10 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       The listeners are invoked in the order of their appearance in web.xml. The &quot;destroyed&quot; method is invoked in the reverse order.
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1431000556154" ID="ID_1452735659" MODIFIED="1431000591777" TEXT="Context params">
+<node CREATED="1431000556154" ID="ID_1452735659" MODIFIED="1431672952577" STYLE="fork" TEXT="Context params">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -956,7 +1249,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431010496436" ID="ID_857843825" MODIFIED="1431526777177" TEXT="TagLib">
+<node COLOR="#338800" CREATED="1431010496436" ID="ID_857843825" MODIFIED="1431680121997" TEXT="TagLib">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -994,6 +1287,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       <li>
         For a tag to take any number of arguments, it must implement javax.servlet.jsp.tagext.DynamicAttributes interface.
       </li>
+      <li>
+        //tag/body-content#tagdependent (&lt;body-content&gt;tagdependent/&lt;body-content&gt;) - since the body content of the tag is tagdependent, the body of the tag will not be processed by the JSP engine. It must be processed by the tag itself.
+      </li>
     </ul>
     <h4>
       Examples:
@@ -1001,10 +1297,11 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     <pre style="padding-top: 5px; padding-right: 5px; padding-bottom: 5px; padding-left: 5px; color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;%@taglib uri=&quot;/stats&quot; prefix=&quot;stats&quot; %&gt;
 &lt;%@taglib tagdir=&quot;/WEB-INF/tags/stats&quot; prefix=&quot;stats&quot; %&gt;</pre>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1431524738343" FOLDED="true" ID="ID_525420565" MODIFIED="1431526743434" TEXT="web-fragments">
-<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431526516495" TEXT="JAR library">
+<node CREATED="1431524738343" ID="ID_525420565" MODIFIED="1431675422754" STYLE="fork" TEXT="web-fragments">
+<node CREATED="1431440775273" ID="ID_1430989942" MODIFIED="1431672952577" STYLE="fork" TEXT="JAR library">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1027,7 +1324,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1431524780579" ID="ID_476806081" MODIFIED="1431524988850" TEXT="Absolute ordering">
+<node CREATED="1431524780579" ID="ID_476806081" MODIFIED="1431672952577" STYLE="fork" TEXT="Absolute ordering">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1058,9 +1355,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </node>
 </node>
 </node>
-<node CREATED="1430910135007" FOLDED="true" ID="ID_728114039" MODIFIED="1431604095026" POSITION="right" TEXT="JSP">
+<node CREATED="1430910135007" ID="ID_728114039" MODIFIED="1431680483701" POSITION="right" STYLE="fork" TEXT="JSP">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430915044834" ID="ID_1807315546" MODIFIED="1430915311817" TEXT="Basic syntax">
+<node CREATED="1430915044834" ID="ID_1807315546" MODIFIED="1431675584992" STYLE="fork" TEXT="Basic syntax">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1097,15 +1394,16 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       &lt;%-- my comment --%&gt;
     </p>
     <h4>
-      Importing the package
+      Importing the package (see directives)
     </h4>
     <p>
       &lt;%@ page import=&quot;java.util.*&quot;%&gt;
     </p>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430913825477" ID="ID_1636663940" MODIFIED="1430990346888" TEXT="Implicit objects">
+<node CREATED="1430913825477" ID="ID_1636663940" MODIFIED="1431673300365" STYLE="fork" TEXT="Implicit objects">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1192,7 +1490,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </tr>
       <tr>
         <td>
-          Exception
+          exception
         </td>
         <td>
           The&#160;<b>Exception</b>&#160;object allows the exception data to be accessed by designated JSP.
@@ -1202,8 +1500,8 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430914144050" ID="ID_727544684" MODIFIED="1431006133501" TEXT="Directives">
-<node CREATED="1430914147667" ID="ID_49564038" MODIFIED="1431006338679" TEXT="Page">
+<node CREATED="1430914144050" FOLDED="true" ID="ID_727544684" MODIFIED="1431680488923" STYLE="fork" TEXT="Directives">
+<node CREATED="1430914147667" ID="ID_49564038" MODIFIED="1431672952576" STYLE="fork" TEXT="Page">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1346,7 +1644,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430914155787" ID="ID_1888729900" MODIFIED="1431603989114" TEXT="Include">
+<node CREATED="1430914155787" ID="ID_1888729900" MODIFIED="1431672952576" STYLE="fork" TEXT="Include">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1370,10 +1668,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       Check more detail related to include directive at&#160;<a href="http://www.tutorialspoint.com/jsp/include_directive.htm" style="color: rgb(49, 49, 49); text-decoration: none; padding-right: 22px; padding-bottom: 2px; font-weight: bold; background-image: url(http://cdn.tutorialspoint.com/images/link-icon.png); background-position: 100% 50%; background-repeat: no-repeat; background-attachment: scroll"><font color="rgb(49, 49, 49)"><b>Include Directive</b></font></a>.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node CREATED="1430914353586" ID="ID_95828921" MODIFIED="1431604072632" TEXT="Taglib">
+<node CREATED="1430914353586" ID="ID_95828921" MODIFIED="1431672952576" STYLE="fork" TEXT="Taglib">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1401,12 +1698,11 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       Check more detail related to taglib directive at&#160;<a href="http://www.tutorialspoint.com/jsp/taglib_directive.htm" style="color: rgb(49, 49, 49); text-decoration: none; padding-right: 22px; padding-bottom: 2px; font-weight: bold; background-image: url(http://cdn.tutorialspoint.com/images/link-icon.png); background-position: 100% 50%; background-repeat: no-repeat; background-attachment: scroll"><font color="rgb(49, 49, 49)"><b>Taglib Directive</b></font></a>.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node CREATED="1430915452689" ID="ID_1299622676" MODIFIED="1431006254631" TEXT="Actions">
-<node CREATED="1430990611510" ID="ID_1968151878" MODIFIED="1430990825491" TEXT="useBean">
+<node CREATED="1430915452689" ID="ID_1299622676" MODIFIED="1431675766047" STYLE="fork" TEXT="Actions">
+<node CREATED="1430990611510" ID="ID_1968151878" MODIFIED="1431672952576" STYLE="fork" TEXT="useBean">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1436,7 +1732,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990851383" ID="ID_678564950" MODIFIED="1430990873700" TEXT="getProperty">
+<node CREATED="1430990851383" ID="ID_678564950" MODIFIED="1431672952576" STYLE="fork" TEXT="getProperty">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1446,7 +1742,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990907863" ID="ID_369303020" MODIFIED="1431524215949" TEXT="setProperty">
+<node CREATED="1430990907863" ID="ID_369303020" MODIFIED="1431672952576" STYLE="fork" TEXT="setProperty">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1481,7 +1777,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990618126" ID="ID_305644191" MODIFIED="1431008296610" TEXT="include">
+<node CREATED="1430990618126" ID="ID_305644191" MODIFIED="1431672952576" STYLE="fork" TEXT="include">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1533,7 +1829,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1430987527044" ID="ID_619626314" MODIFIED="1430987782869" TEXT="Error handling">
+<node CREATED="1430987527044" ID="ID_619626314" MODIFIED="1431672952576" STYLE="fork" TEXT="Error handling">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1554,7 +1850,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990992442" ID="ID_1821115782" MODIFIED="1430991402849" TEXT="Tags">
+<node CREATED="1430990992442" ID="ID_1821115782" MODIFIED="1431675763436" STYLE="fork" TEXT="Config">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1582,7 +1878,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430990364597" ID="ID_1837574644" MODIFIED="1431595371260" TEXT="Others">
+<node CREATED="1430990364597" ID="ID_1837574644" MODIFIED="1431672952576" STYLE="fork" TEXT="Others">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1609,13 +1905,12 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       javax.servlet.jsp.JspWriter
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
 </node>
-<node CREATED="1430910154440" FOLDED="true" ID="ID_1171667824" MODIFIED="1431595563999" POSITION="right" TEXT="Design patterns">
+<node CREATED="1430910154440" FOLDED="true" ID="ID_1171667824" MODIFIED="1431675813090" POSITION="right" STYLE="fork" TEXT="Design patterns">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430910456234" ID="ID_467389040" MODIFIED="1430910473686" TEXT="Front Controller / Front Component">
+<node CREATED="1430910456234" ID="ID_467389040" MODIFIED="1431672952576" STYLE="fork" TEXT="Front Controller / Front Component">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1627,7 +1922,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430910473676" ID="ID_1471668192" MODIFIED="1430910484598" TEXT="Intercepting Filter">
+<node CREATED="1430910473676" ID="ID_1471668192" MODIFIED="1431672952576" STYLE="fork" TEXT="Intercepting Filter">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1639,7 +1934,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430910491396" ID="ID_1959382343" MODIFIED="1430910500207" TEXT="Model View Controller (MVC)">
+<node CREATED="1430910491396" ID="ID_1959382343" MODIFIED="1431672952576" STYLE="fork" TEXT="Model View Controller (MVC)">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1651,7 +1946,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430910505716" ID="ID_1296758522" MODIFIED="1430910518583" TEXT="Business Delegate">
+<node CREATED="1430910505716" ID="ID_1296758522" MODIFIED="1431672952576" STYLE="fork" TEXT="Business Delegate">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1663,7 +1958,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430910519413" ID="ID_527693942" MODIFIED="1430910527470" TEXT="Data Access Object">
+<node CREATED="1430910519413" ID="ID_527693942" MODIFIED="1431672952576" STYLE="fork" TEXT="Data Access Object">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1676,18 +1971,18 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </html></richcontent>
 </node>
 </node>
-<node CREATED="1430910167401" FOLDED="true" ID="ID_1734457043" MODIFIED="1430997143534" POSITION="right" TEXT="CGI">
+<node CREATED="1430910167401" FOLDED="true" ID="ID_1734457043" MODIFIED="1431679916742" POSITION="right" STYLE="fork" TEXT="CGI">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430910188251" ID="ID_1938622523" MODIFIED="1430910298970" TEXT="CGI scripts/programs can be written in multiple languages."/>
-<node CREATED="1430910250156" ID="ID_322155179" MODIFIED="1430910292806" TEXT=" CGI scripts/programs are significantly less secure than servlets."/>
-<node CREATED="1430910200034" ID="ID_356629229" MODIFIED="1430910362268" TEXT="A new process (traditional) is started to process each HTTP request (while with servlets, it is not so)."/>
-<node CREATED="1430910241163" ID="ID_1232215554" MODIFIED="1430910242224" TEXT="Processing a CGI request does NOT require any container. Servlets are run inside a servlet container. --&gt; It is a lot easier and cheaper to host CGI scripts than servlet based web applications. "/>
-<node CREATED="1430910223227" ID="ID_701736353" MODIFIED="1430910409934" TEXT="The processing state is not inherited across invocations and this makes it a lot more complicated to manage sessions."/>
-<node CREATED="1430910233147" ID="ID_1665340830" MODIFIED="1430910234319" TEXT="Simple requests that do not involve complex business logic are significantly easier to process using CGI (just script) instead of servlets."/>
+<node CREATED="1430910188251" ID="ID_1938622523" MODIFIED="1431672952576" STYLE="fork" TEXT="CGI scripts/programs can be written in multiple languages."/>
+<node CREATED="1430910250156" ID="ID_322155179" MODIFIED="1431679787878" STYLE="fork" TEXT=" CGI scripts/programs are significantly less secure than servlets: CGI programs are language independent but not platform independent, while servlets are generally only platform independent."/>
+<node CREATED="1430910200034" ID="ID_356629229" MODIFIED="1431672952576" STYLE="fork" TEXT="A new process (traditional) is started to process each HTTP request (while with servlets, it is not so)."/>
+<node CREATED="1430910241163" ID="ID_1232215554" MODIFIED="1431672952575" STYLE="fork" TEXT="Processing a CGI request does NOT require any container. Servlets are run inside a servlet container. --&gt; It is a lot easier and cheaper to host CGI scripts than servlet based web applications. "/>
+<node CREATED="1430910223227" ID="ID_701736353" MODIFIED="1431672952575" STYLE="fork" TEXT="The processing state is not inherited across invocations and this makes it a lot more complicated to manage sessions."/>
+<node CREATED="1430910233147" ID="ID_1665340830" MODIFIED="1431672952575" STYLE="fork" TEXT="Simple requests that do not involve complex business logic are significantly easier to process using CGI (just script) instead of servlets."/>
 </node>
-<node CREATED="1430910739973" FOLDED="true" ID="ID_779730016" MODIFIED="1431525665397" POSITION="left" TEXT="JSTL">
+<node CREATED="1430910739973" ID="ID_779730016" MODIFIED="1431680193339" POSITION="left" STYLE="fork" TEXT="JSTL">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430913733459" ID="ID_1469782263" MODIFIED="1430913751797" TEXT="Accessing values from map">
+<node CREATED="1430913733459" ID="ID_1469782263" MODIFIED="1431672952575" STYLE="fork" TEXT="Accessing values from map">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1707,12 +2002,15 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430913005693" ID="ID_847618428" MODIFIED="1430987172256" TEXT="Implicit objects (available in EL)">
+<node CREATED="1430913005693" ID="ID_847618428" MODIFIED="1431680256131" STYLE="fork" TEXT="Implicit objects (available in EL)">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
+    <h4>
+      Implicit objects
+    </h4>
     <ul>
       <li>
         <b>pageContext</b>&#160;- the PageContext object
@@ -1729,6 +2027,11 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       <li>
         <b>applicationScope </b>- a Map that maps application-scoped attribute names to
       </li>
+    </ul>
+    <h4>
+      Their values
+    </h4>
+    <ul>
       <li>
         <b>param</b>&#160;- a Map that maps parameter names to a single String parameter value (obtained by calling ServletRequest.getParameter(String name))
       </li>
@@ -1749,9 +2052,10 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       </li>
     </ul>
   </body>
-</html></richcontent>
+</html>
+</richcontent>
 </node>
-<node CREATED="1430911571277" ID="ID_339253698" MODIFIED="1430913837355" TEXT="Tags">
+<node CREATED="1430911571277" ID="ID_339253698" MODIFIED="1431672952575" STYLE="fork" TEXT="Tags">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1827,7 +2131,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
     </table>
   </body>
 </html></richcontent>
-<node CREATED="1430910743525" ID="ID_387139499" MODIFIED="1430915608983" TEXT="Core">
+<node CREATED="1430910743525" ID="ID_387139499" MODIFIED="1431672952575" STYLE="fork" TEXT="Core">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -1965,7 +2269,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430911275632" ID="ID_1536302846" MODIFIED="1430911512036" TEXT="Formatting">
+<node CREATED="1430911275632" ID="ID_1536302846" MODIFIED="1431672952575" STYLE="fork" TEXT="Formatting">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2079,7 +2383,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430911532601" ID="ID_28928749" MODIFIED="1430912273900" TEXT="SQL">
+<node CREATED="1430911532601" ID="ID_28928749" MODIFIED="1431672952575" STYLE="fork" TEXT="SQL">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2156,7 +2460,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430911540490" ID="ID_1119219426" MODIFIED="1430911834541" TEXT="XML">
+<node CREATED="1430911540490" ID="ID_1119219426" MODIFIED="1431672952575" STYLE="fork" TEXT="XML">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2280,7 +2584,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430911545537" ID="ID_689349423" MODIFIED="1430912470669" TEXT="Functions">
+<node CREATED="1430911545537" ID="ID_689349423" MODIFIED="1431672952575" STYLE="fork" TEXT="Functions">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2436,24 +2740,39 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
 </node>
 </node>
 </node>
-<node CREATED="1430987178783" ID="ID_329664631" MODIFIED="1430991458745" POSITION="left" TEXT="Session management">
+<node CREATED="1430987178783" FOLDED="true" ID="ID_329664631" MODIFIED="1431673378553" POSITION="left" STYLE="fork" TEXT="Session management">
 <font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1430987192479" ID="ID_1094943237" MODIFIED="1430987277872" TEXT="Session tracking">
+<node CREATED="1430987192479" ID="ID_1094943237" MODIFIED="1431673171148" STYLE="fork" TEXT="Session tracking">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
-    Using cookies, URL Rewriting, or SSL - The configuration in DD and related methods in ServletContext.
-
     <p>
-      <br />
-      <font face="monospace">&lt;session-config&gt;<br />&#160;&#160;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;<br />&lt;/session-config&gt;</font>
+      The sessions are tracked as:
     </p>
+    <ul>
+      <li>
+        COOKIE - using cookies
+      </li>
+      <li>
+        URL - using URL Rewriting
+      </li>
+      <li>
+        SSL - using SSL/TLS
+      </li>
+    </ul>
+    <p>
+      The configuration in DD and related methods in ServletContext.
+    </p>
+    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;session-config&gt;
+ &#160;&#160;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;
+&lt;/session-config&gt;
+    </pre>
   </body>
 </html></richcontent>
 </node>
-<node CREATED="1430987319101" ID="ID_1789404312" MODIFIED="1430987352855" TEXT="HttpOnly flag on session cookie">
+<node CREATED="1430987319101" ID="ID_1789404312" MODIFIED="1431672952575" STYLE="fork" TEXT="HttpOnly flag on session cookie">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2471,10 +2790,7 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
   </body>
 </html></richcontent>
 </node>
-</node>
-<node CREATED="1431506079641" ID="ID_613368718" MODIFIED="1431522872131" POSITION="left" TEXT="Session">
-<font BOLD="true" NAME="SansSerif" SIZE="14"/>
-<node CREATED="1431522860821" ID="ID_1169523730" MODIFIED="1431522875069" TEXT="Timeout">
+<node CREATED="1431522860821" ID="ID_1169523730" MODIFIED="1431673229500" STYLE="fork" TEXT="Timeout">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -2487,9 +2803,9 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
       XML
     </h4>
     <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;web-app ...&gt;
-&#x9;&lt;session-config&gt;
-&#x9;&#x9;&lt;session-timeout&gt;20&lt;/session-timeout&gt;
-&#x9;&lt;/session-config&gt;
+    &lt;session-config&gt;
+        &lt;session-timeout&gt;20&lt;/session-timeout&gt;
+    &lt;/session-config&gt;
 &lt;/web-app&gt;   
     </pre>
     <h4>
@@ -2513,50 +2829,6 @@ public class RestrictedHelloServlet extends HttpServlet {</pre>
         The container calls valueUnbound() on all the session attributes that implement HttpSessionBindinglistener interface.
       </li>
     </ol>
-  </body>
-</html></richcontent>
-</node>
-<node CREATED="1431522842800" ID="ID_1441732741" MODIFIED="1431523359244" TEXT="Session management">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <h4>
-      Session tracking
-    </h4>
-    <p>
-      The sessions are tracked as:
-    </p>
-    <ul>
-      <li>
-        COOKIE - using cookies
-      </li>
-      <li>
-        URL - using URL Rewriting
-      </li>
-      <li>
-        SSL - using SSL/TLS
-      </li>
-    </ul>
-    <p>
-      The configuration in DD and related methods in ServletContext.
-    </p>
-    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;session-config&gt;
- &#160;&#160;&lt;tracking-mode&gt;SSL&lt;/tracking-mode&gt;
-&lt;/session-config&gt;
-    </pre>
-    <h4>
-      HttpOnly
-    </h4>
-    <p>
-      HttpOnly flag on session cookie - to mittigate cross site scripting.
-    </p>
-    <pre style="color: rgb(49, 49, 49); background-color: rgb(238, 238, 238)">&lt;session-config&gt;
-&#160;&#160;&lt;cookie-config&gt; 
-&#160;&#160;&#160;&#160;&lt;http-only&gt;true&lt;/http-only&gt; 
-&#160;&#160;&lt;/cookie-config&gt; 
-&lt;/session-config&gt;</pre>
   </body>
 </html></richcontent>
 </node>
